@@ -1,0 +1,26 @@
+directory: /task/music
+library: /task/beets_library.db
+
+plugins:
+  - chroma
+  - fromfilename
+  - discogs
+  - fetchart
+
+import:
+    move: yes
+    incremental: yes
+
+    #quiet: yes
+    #log:
+
+chroma:
+    auto: no
+
+quiet:
+    fallback: skip
+
+discogs:
+  #user_token:
+
+

@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:11
+    environment:
+      POSTGRES_USER: supysonic
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: supysonic
+    volumes:
+      - ./docker-entrypoint-initdb.d/enable_citext.sql:/docker-entrypoint-initdb.d/enable_citext.sql
+    restart: "no"
+
+  supysonic:
+    build:
+      dockerfile: supysonic.dockerfile
+      context: .
+    ports:
+      - 8000:8000
+    volumes:
+      - ./music:/task/music
+      - ./beets_config.yaml:/root/.config/beets/config.yaml
+    environment:
+      ADMIN_USER: jan
+      ADMIN_PASSWORD: janspasswort#
+    links:
+      - db:db
+    depends_on:
+      - db
+    restart: "no"
