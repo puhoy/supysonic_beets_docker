@@ -1,9 +1,10 @@
-FROM arm64v8/python:3.7.2-alpine3.9
-#FROM python:3.7.2-alpine3.9
+#FROM arm64v8/python:3.7.2-alpine3.9
+FROM python:3.7.2-alpine3.9
 
 WORKDIR /task
 
 RUN apk add --no-cache git zlib-dev zlib alpine-sdk libjpeg-turbo-dev postgresql-dev ffmpeg ffmpeg-dev \
+flac mpg123 vorbis-tools \
 cmake \
 build-base gcc abuild binutils binutils-doc gcc-doc
 
