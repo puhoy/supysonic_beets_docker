@@ -18,11 +18,11 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - ./music:/task/music
+      - ./PATH/TO/MUSIC:/task/music
       - ./beets_config.yaml:/root/.config/beets/config.yaml
     environment:
-      ADMIN_USER: jan
-      ADMIN_PASSWORD: janspasswort#
+      #ADMIN_USER:
+      #ADMIN_PASSWORD:
     links:
       - db:db
     depends_on:

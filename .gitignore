@@ -1,3 +1,4 @@
 .idea
 beets_config.yaml
 music
+docker-compose.yml
