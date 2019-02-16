@@ -16,7 +16,7 @@ RUN pip install gunicorn psycopg2-binary pyacoustid discogs_client
 RUN git clone https://github.com/beetbox/beets.git && cd beets && pip install .
 
 RUN git clone https://github.com/spl0k/supysonic.git && cd supysonic && pip install . && pip install .[watcher]
-COPY supysonic.conf /etc/supysonic
+
 COPY start.sh /task/start.sh
 COPY wait-for /task/wait-for
 

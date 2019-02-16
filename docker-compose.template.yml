@@ -21,6 +21,8 @@ services:
       - ./PATH/TO/MUSIC:/task/music
       - ./beets_config.yaml:/root/.config/beets/config.yaml
       - beets_lib:/task/beets_lib
+      - ./supysonic.conf:/etc/supysonic
+
     environment:
       #ADMIN_USER:
       #ADMIN_PASSWORD:
