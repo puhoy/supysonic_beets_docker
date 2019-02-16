@@ -20,6 +20,7 @@ services:
     volumes:
       - ./PATH/TO/MUSIC:/task/music
       - ./beets_config.yaml:/root/.config/beets/config.yaml
+      - beets_lib:/task/beets_lib
     environment:
       #ADMIN_USER:
       #ADMIN_PASSWORD:
@@ -28,3 +29,6 @@ services:
     depends_on:
       - db
     restart: "no"
+
+volumes:
+    beets_lib:
